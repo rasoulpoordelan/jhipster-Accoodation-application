@@ -1,0 +1,223 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="place">
+            <h2><span>Place</span> {{place.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{place.name}}</span>
+                </dd>
+                <dt><span>Key</span></dt>
+                <dd>
+                    <span>{{place.key}}</span>
+                </dd>
+                <dt><span>Place Owner Id</span></dt>
+                <dd>
+                    <span>{{place.placeOwnerId}}</span>
+                </dd>
+                <dt><span>Class Co</span></dt>
+                <dd>
+                    <span>{{place.classCo}}</span>
+                </dd>
+                <dt><span>Class Extra</span></dt>
+                <dd>
+                    <span>{{place.classExtra}}</span>
+                </dd>
+                <dt><span>Meta Keywords</span></dt>
+                <dd>
+                    <span>{{place.metaKeywords}}</span>
+                </dd>
+                <dt><span>Meta Description</span></dt>
+                <dd>
+                    <span>{{place.metaDescription}}</span>
+                </dd>
+                <dt><span>Page Title</span></dt>
+                <dd>
+                    <span>{{place.pageTitle}}</span>
+                </dd>
+                <dt><span>City Id</span></dt>
+                <dd>
+                    <span>{{place.cityId}}</span>
+                </dd>
+                <dt><span>Place Area Id</span></dt>
+                <dd>
+                    <span>{{place.placeAreaId}}</span>
+                </dd>
+                <dt><span>Address Line 1</span></dt>
+                <dd>
+                    <span>{{place.addressLine1}}</span>
+                </dd>
+                <dt><span>Address Line 2</span></dt>
+                <dd>
+                    <span>{{place.addressLine2}}</span>
+                </dd>
+                <dt><span>Location</span></dt>
+                <dd>
+                    <span>{{place.location}}</span>
+                </dd>
+                <dt><span>Phone 1</span></dt>
+                <dd>
+                    <span>{{place.phone1}}</span>
+                </dd>
+                <dt><span>Phone 2</span></dt>
+                <dd>
+                    <span>{{place.phone2}}</span>
+                </dd>
+                <dt><span>Fax</span></dt>
+                <dd>
+                    <span>{{place.fax}}</span>
+                </dd>
+                <dt><span>Is Visible</span></dt>
+                <dd>
+                    <span>{{place.isVisible}}</span>
+                </dd>
+                <dt><span>Default Image Id</span></dt>
+                <dd>
+                    <span>{{place.defaultImageId}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{place.description}}</span>
+                </dd>
+                <dt><span>Rules And Regulations</span></dt>
+                <dd>
+                    <span>{{place.rulesAndRegulations}}</span>
+                </dd>
+                <dt><span>Select Reason</span></dt>
+                <dd>
+                    <span>{{place.selectReason}}</span>
+                </dd>
+                <dt><span>Review</span></dt>
+                <dd>
+                    <span>{{place.review}}</span>
+                </dd>
+                <dt><span>Checkin Hour</span></dt>
+                <dd>
+                    <span>{{place.checkinHour}}</span>
+                </dd>
+                <dt><span>Checkout Hour</span></dt>
+                <dd>
+                    <span>{{place.checkoutHour}}</span>
+                </dd>
+                <dt><span>Priority</span></dt>
+                <dd>
+                    <span>{{place.priority}}</span>
+                </dd>
+                <dt><span>Total Score</span></dt>
+                <dd>
+                    <span>{{place.totalScore}}</span>
+                </dd>
+                <dt><span>Extra Person Price</span></dt>
+                <dd>
+                    <span>{{place.extraPersonPrice}}</span>
+                </dd>
+                <dt><span>Half Charge Check In</span></dt>
+                <dd>
+                    <span>{{place.halfChargeCheckIn}}</span>
+                </dd>
+                <dt><span>Half Charge Check Out</span></dt>
+                <dd>
+                    <span>{{place.halfChargeCheckOut}}</span>
+                </dd>
+                <dt><span>Default Video Url</span></dt>
+                <dd>
+                    <span>{{place.defaultVideoUrl}}</span>
+                </dd>
+                <dt><span>Virtual Tour Url</span></dt>
+                <dd>
+                    <span>{{place.virtualTourUrl}}</span>
+                </dd>
+                <dt><span>Postal Code</span></dt>
+                <dd>
+                    <span>{{place.postalCode}}</span>
+                </dd>
+                <dt><span>Cancellation Policy</span></dt>
+                <dd>
+                    <span>{{place.cancellationPolicy}}</span>
+                </dd>
+                <dt><span>Bedroom</span></dt>
+                <dd>
+                    <span>{{place.bedroom}}</span>
+                </dd>
+                <dt><span>Bath Room</span></dt>
+                <dd>
+                    <span>{{place.bathRoom}}</span>
+                </dd>
+                <dt><span>Lavatory</span></dt>
+                <dd>
+                    <span>{{place.lavatory}}</span>
+                </dd>
+                <dt><span>W C</span></dt>
+                <dd>
+                    <span>{{place.wC}}</span>
+                </dd>
+                <dt><span>Infrastructure Area</span></dt>
+                <dd>
+                    <span>{{place.infrastructureArea}}</span>
+                </dd>
+                <dt><span>Total Area</span></dt>
+                <dd>
+                    <span>{{place.totalArea}}</span>
+                </dd>
+                <dt><span>Capacity</span></dt>
+                <dd>
+                    <span>{{place.capacity}}</span>
+                </dd>
+                <dt><span>Max Capacity</span></dt>
+                <dd>
+                    <span>{{place.maxCapacity}}</span>
+                </dd>
+                <dt><span>Registration Source</span></dt>
+                <dd>
+                    <span>{{place.registrationSource}}</span>
+                </dd>
+                <dt><span>Booking Policy</span></dt>
+                <dd>
+                    <span>{{place.bookingPolicy}}</span>
+                </dd>
+                <dt><span>Review Status</span></dt>
+                <dd>
+                    <span>{{place.reviewStatus}}</span>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{place.status}}</span>
+                </dd>
+                <dt><span>Base Price</span></dt>
+                <dd>
+                    <span>{{place.basePrice}}</span>
+                </dd>
+                <dt><span>Commission</span></dt>
+                <dd>
+                    <span>{{place.commission}}</span>
+                </dd>
+                <dt><span>Place Att</span></dt>
+                <dd>
+                    <span *ngFor="let placeAtt of place.placeAtts; let last = last">
+                        <a [routerLink]="['/attribute-my-suffix', placeAtt?.id, 'view' ]">{{placeAtt.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Place</span></dt>
+                <dd>
+                    <span *ngFor="let place of place.places; let last = last">
+                        <a [routerLink]="['/place-tag-my-suffix', place?.id, 'view' ]">{{place.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/place-my-suffix', place.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
