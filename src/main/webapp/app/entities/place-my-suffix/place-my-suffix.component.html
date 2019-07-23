@@ -1,0 +1,149 @@
+<div>
+    <h2 id="page-heading">
+        <span>Places</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-place-my-suffix" [routerLink]="['/place-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Place
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="places?.length === 0">
+        <span>No places found</span>
+    </div>
+    <div class="table-responsive" *ngIf="places?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span>Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="key"><span>Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="placeOwnerId"><span>Place Owner Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="classCo"><span>Class Co</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="classExtra"><span>Class Extra</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="metaKeywords"><span>Meta Keywords</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="metaDescription"><span>Meta Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pageTitle"><span>Page Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cityId"><span>City Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="placeAreaId"><span>Place Area Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="addressLine1"><span>Address Line 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="addressLine2"><span>Address Line 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="location"><span>Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="phone1"><span>Phone 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="phone2"><span>Phone 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fax"><span>Fax</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isVisible"><span>Is Visible</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="defaultImageId"><span>Default Image Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="description"><span>Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rulesAndRegulations"><span>Rules And Regulations</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="selectReason"><span>Select Reason</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="review"><span>Review</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="checkinHour"><span>Checkin Hour</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="checkoutHour"><span>Checkout Hour</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="priority"><span>Priority</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="totalScore"><span>Total Score</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="extraPersonPrice"><span>Extra Person Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="halfChargeCheckIn"><span>Half Charge Check In</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="halfChargeCheckOut"><span>Half Charge Check Out</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="defaultVideoUrl"><span>Default Video Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="virtualTourUrl"><span>Virtual Tour Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="postalCode"><span>Postal Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cancellationPolicy"><span>Cancellation Policy</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bedroom"><span>Bedroom</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bathRoom"><span>Bath Room</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lavatory"><span>Lavatory</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="wC"><span>W C</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="infrastructureArea"><span>Infrastructure Area</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="totalArea"><span>Total Area</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="capacity"><span>Capacity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="maxCapacity"><span>Max Capacity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="registrationSource"><span>Registration Source</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bookingPolicy"><span>Booking Policy</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reviewStatus"><span>Review Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="basePrice"><span>Base Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="commission"><span>Commission</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let place of places ;trackBy: trackId">
+                <td><a [routerLink]="['/place-my-suffix', place.id, 'view' ]">{{place.id}}</a></td>
+                <td>{{place.name}}</td>
+                <td>{{place.key}}</td>
+                <td>{{place.placeOwnerId}}</td>
+                <td>{{place.classCo}}</td>
+                <td>{{place.classExtra}}</td>
+                <td>{{place.metaKeywords}}</td>
+                <td>{{place.metaDescription}}</td>
+                <td>{{place.pageTitle}}</td>
+                <td>{{place.cityId}}</td>
+                <td>{{place.placeAreaId}}</td>
+                <td>{{place.addressLine1}}</td>
+                <td>{{place.addressLine2}}</td>
+                <td>{{place.location}}</td>
+                <td>{{place.phone1}}</td>
+                <td>{{place.phone2}}</td>
+                <td>{{place.fax}}</td>
+                <td>{{place.isVisible}}</td>
+                <td>{{place.defaultImageId}}</td>
+                <td>{{place.description}}</td>
+                <td>{{place.rulesAndRegulations}}</td>
+                <td>{{place.selectReason}}</td>
+                <td>{{place.review}}</td>
+                <td>{{place.checkinHour}}</td>
+                <td>{{place.checkoutHour}}</td>
+                <td>{{place.priority}}</td>
+                <td>{{place.totalScore}}</td>
+                <td>{{place.extraPersonPrice}}</td>
+                <td>{{place.halfChargeCheckIn}}</td>
+                <td>{{place.halfChargeCheckOut}}</td>
+                <td>{{place.defaultVideoUrl}}</td>
+                <td>{{place.virtualTourUrl}}</td>
+                <td>{{place.postalCode}}</td>
+                <td>{{place.cancellationPolicy}}</td>
+                <td>{{place.bedroom}}</td>
+                <td>{{place.bathRoom}}</td>
+                <td>{{place.lavatory}}</td>
+                <td>{{place.wC}}</td>
+                <td>{{place.infrastructureArea}}</td>
+                <td>{{place.totalArea}}</td>
+                <td>{{place.capacity}}</td>
+                <td>{{place.maxCapacity}}</td>
+                <td>{{place.registrationSource}}</td>
+                <td>{{place.bookingPolicy}}</td>
+                <td>{{place.reviewStatus}}</td>
+                <td>{{place.status}}</td>
+                <td>{{place.basePrice}}</td>
+                <td>{{place.commission}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/place-my-suffix', place.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/place-my-suffix', place.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'place-my-suffix', { outlets: { popup: place.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
