@@ -1,0 +1,126 @@
+entity City{
+	name String
+}
+
+entity PlaceCategory{
+ name String
+}
+
+entity PlaceArea{
+ name String
+}
+
+entity Place {
+	 name String
+    , Key String
+    , Name String
+    , PlaceOwnerId String
+    , ClassCo Integer
+    , ClassExtra String
+    , MetaKeywords String
+    , MetaDescription String
+    , PageTitle String
+    , CityId String
+    , PlaceAreaId Integer
+    , AddressLine1 String
+    , AddressLine2 String
+    , Location String
+    , Phone1 String
+    , Phone2 String
+    , Fax String
+    , IsVisible Boolean
+    , DefaultImageId Integer
+    , Description String
+    , RulesAndRegulations String
+    , SelectReason String
+    , Review String
+    , CheckinHour Integer
+    , CheckoutHour Integer
+    , Priority Integer
+    , TotalScore Integer
+    , ExtraPersonPrice Double
+    , HalfChargeCheckIn Double
+    , HalfChargeCheckOut Double
+    , DefaultVideoUrl String
+    , VirtualTourUrl String
+    , PostalCode String
+    , CancellationPolicy String
+    , Bedroom Integer
+    , BathRoom Integer
+    , Lavatory Integer
+    , WC Integer
+    , InfrastructureArea  Integer
+    , TotalArea Integer
+    , Capacity Integer
+    , MaxCapacity Integer
+    , RegistrationSource String
+    , BookingPolicy Integer
+    , ReviewStatus Integer
+    , Status Integer
+    , BasePrice Double
+    , Commission Double
+}
+
+
+entity PlaceType{
+  name String
+}
+
+
+
+entity Service{
+	name String
+}
+
+entity PlaceService{
+	name String
+    price Double
+}
+
+entity Attribute{
+	name String
+}
+
+entity Tag{
+  name String
+}
+
+entity PlaceTag{
+	name String
+}
+
+relationship OneToMany {
+	Tag{tag} to PlaceTag,
+	Place{place} to PlaceType,
+    Place{place} to PlaceTag,
+    Service{service} to PlaceService
+    
+}
+relationship ManyToMany {
+  Place{place} to Attribute{attribute},
+    Place{place} to PlaceTag{placeTag}
+}
+
+
+enum OrderStatus {
+    INIT,PAYMENT,FINISH,CANCEL
+}
+
+entity Order{
+	userId String
+    date LocalDate
+    status OrderStatus
+}
+
+
+
+// Set pagination options
+paginate Place with infinite-scroll
+paginate PlaceTag with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix
