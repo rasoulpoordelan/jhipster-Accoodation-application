@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span>Place Types</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-place-type-my-suffix" [routerLink]="['/place-type-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Place Type
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="placeTypes?.length === 0">
+        <span>No placeTypes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="placeTypes?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Name</span></th>
+            <th><span>Place</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let placeType of placeTypes ;trackBy: trackId">
+                <td><a [routerLink]="['/place-type-my-suffix', placeType.id, 'view' ]">{{placeType.id}}</a></td>
+                <td>{{placeType.name}}</td>
+                <td>
+                    <div *ngIf="placeType.placeId">
+                        <a [routerLink]="['../place-my-suffix', placeType.placeId , 'view' ]" >{{placeType.placeId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/place-type-my-suffix', placeType.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/place-type-my-suffix', placeType.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'place-type-my-suffix', { outlets: { popup: placeType.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

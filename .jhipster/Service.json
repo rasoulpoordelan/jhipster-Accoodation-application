@@ -1,0 +1,27 @@
+{
+    "name": "Service",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "placeService",
+            "otherEntityRelationshipName": "service",
+            "relationshipName": "service"
+        }
+    ],
+    "changelogDate": "20190723113446",
+    "entityTableName": "service",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

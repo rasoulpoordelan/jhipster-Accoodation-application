@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity PlaceTag.
+    -->
+    <changeSet id="20190723113450-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="place_id"
+                                 baseTableName="place_tag"
+                                 constraintName="fk_place_tag_place_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="place"/>
+
+        <addForeignKeyConstraint baseColumnNames="tag_id"
+                                 baseTableName="place_tag"
+                                 constraintName="fk_place_tag_tag_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+
+    </changeSet>
+</databaseChangeLog>
