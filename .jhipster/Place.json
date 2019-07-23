@@ -1,0 +1,227 @@
+{
+    "name": "Place",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "key",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "placeOwnerId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "classCo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "classExtra",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaKeywords",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pageTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cityId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "placeAreaId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "addressLine1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isVisible",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "defaultImageId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rulesAndRegulations",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "selectReason",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "review",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "checkinHour",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "checkoutHour",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalScore",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "extraPersonPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "halfChargeCheckIn",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "halfChargeCheckOut",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "defaultVideoUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "virtualTourUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cancellationPolicy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bedroom",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bathRoom",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lavatory",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "wC",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "infrastructureArea",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalArea",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "capacity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxCapacity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "registrationSource",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bookingPolicy",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "reviewStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "basePrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "commission",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "placeType",
+            "otherEntityRelationshipName": "place",
+            "relationshipName": "placeType"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "attribute",
+            "otherEntityRelationshipName": "attribute",
+            "relationshipName": "placeAtt",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "placeTag",
+            "otherEntityRelationshipName": "placeTag",
+            "relationshipName": "place",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190723122537",
+    "entityTableName": "place",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
