@@ -1,0 +1,271 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-place-my-suffix-heading">Create or edit a Place</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_key">Key</label>
+                    <input type="text" class="form-control" name="key" id="field_key"
+                           formControlName="key"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_placeOwnerId">Place Owner Id</label>
+                    <input type="text" class="form-control" name="placeOwnerId" id="field_placeOwnerId"
+                           formControlName="placeOwnerId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_classCo">Class Co</label>
+                    <input type="number" class="form-control" name="classCo" id="field_classCo"
+                           formControlName="classCo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_classExtra">Class Extra</label>
+                    <input type="text" class="form-control" name="classExtra" id="field_classExtra"
+                           formControlName="classExtra"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_metaKeywords">Meta Keywords</label>
+                    <input type="text" class="form-control" name="metaKeywords" id="field_metaKeywords"
+                           formControlName="metaKeywords"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_metaDescription">Meta Description</label>
+                    <input type="text" class="form-control" name="metaDescription" id="field_metaDescription"
+                           formControlName="metaDescription"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pageTitle">Page Title</label>
+                    <input type="text" class="form-control" name="pageTitle" id="field_pageTitle"
+                           formControlName="pageTitle"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cityId">City Id</label>
+                    <input type="text" class="form-control" name="cityId" id="field_cityId"
+                           formControlName="cityId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_placeAreaId">Place Area Id</label>
+                    <input type="number" class="form-control" name="placeAreaId" id="field_placeAreaId"
+                           formControlName="placeAreaId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_addressLine1">Address Line 1</label>
+                    <input type="text" class="form-control" name="addressLine1" id="field_addressLine1"
+                           formControlName="addressLine1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_addressLine2">Address Line 2</label>
+                    <input type="text" class="form-control" name="addressLine2" id="field_addressLine2"
+                           formControlName="addressLine2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_location">Location</label>
+                    <input type="text" class="form-control" name="location" id="field_location"
+                           formControlName="location"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phone1">Phone 1</label>
+                    <input type="text" class="form-control" name="phone1" id="field_phone1"
+                           formControlName="phone1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phone2">Phone 2</label>
+                    <input type="text" class="form-control" name="phone2" id="field_phone2"
+                           formControlName="phone2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                           formControlName="fax"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_isVisible">Is Visible</label>
+                    <input type="checkbox" class="form-control" name="isVisible" id="field_isVisible"
+                           formControlName="isVisible"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_defaultImageId">Default Image Id</label>
+                    <input type="number" class="form-control" name="defaultImageId" id="field_defaultImageId"
+                           formControlName="defaultImageId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rulesAndRegulations">Rules And Regulations</label>
+                    <input type="text" class="form-control" name="rulesAndRegulations" id="field_rulesAndRegulations"
+                           formControlName="rulesAndRegulations"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_selectReason">Select Reason</label>
+                    <input type="text" class="form-control" name="selectReason" id="field_selectReason"
+                           formControlName="selectReason"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_review">Review</label>
+                    <input type="text" class="form-control" name="review" id="field_review"
+                           formControlName="review"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_checkinHour">Checkin Hour</label>
+                    <input type="number" class="form-control" name="checkinHour" id="field_checkinHour"
+                           formControlName="checkinHour"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_checkoutHour">Checkout Hour</label>
+                    <input type="number" class="form-control" name="checkoutHour" id="field_checkoutHour"
+                           formControlName="checkoutHour"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_priority">Priority</label>
+                    <input type="number" class="form-control" name="priority" id="field_priority"
+                           formControlName="priority"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_totalScore">Total Score</label>
+                    <input type="number" class="form-control" name="totalScore" id="field_totalScore"
+                           formControlName="totalScore"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_extraPersonPrice">Extra Person Price</label>
+                    <input type="number" class="form-control" name="extraPersonPrice" id="field_extraPersonPrice"
+                           formControlName="extraPersonPrice"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_halfChargeCheckIn">Half Charge Check In</label>
+                    <input type="number" class="form-control" name="halfChargeCheckIn" id="field_halfChargeCheckIn"
+                           formControlName="halfChargeCheckIn"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_halfChargeCheckOut">Half Charge Check Out</label>
+                    <input type="number" class="form-control" name="halfChargeCheckOut" id="field_halfChargeCheckOut"
+                           formControlName="halfChargeCheckOut"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_defaultVideoUrl">Default Video Url</label>
+                    <input type="text" class="form-control" name="defaultVideoUrl" id="field_defaultVideoUrl"
+                           formControlName="defaultVideoUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_virtualTourUrl">Virtual Tour Url</label>
+                    <input type="text" class="form-control" name="virtualTourUrl" id="field_virtualTourUrl"
+                           formControlName="virtualTourUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_postalCode">Postal Code</label>
+                    <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                           formControlName="postalCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cancellationPolicy">Cancellation Policy</label>
+                    <input type="text" class="form-control" name="cancellationPolicy" id="field_cancellationPolicy"
+                           formControlName="cancellationPolicy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bedroom">Bedroom</label>
+                    <input type="number" class="form-control" name="bedroom" id="field_bedroom"
+                           formControlName="bedroom"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bathRoom">Bath Room</label>
+                    <input type="number" class="form-control" name="bathRoom" id="field_bathRoom"
+                           formControlName="bathRoom"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lavatory">Lavatory</label>
+                    <input type="number" class="form-control" name="lavatory" id="field_lavatory"
+                           formControlName="lavatory"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wC">W C</label>
+                    <input type="number" class="form-control" name="wC" id="field_wC"
+                           formControlName="wC"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_infrastructureArea">Infrastructure Area</label>
+                    <input type="number" class="form-control" name="infrastructureArea" id="field_infrastructureArea"
+                           formControlName="infrastructureArea"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_totalArea">Total Area</label>
+                    <input type="number" class="form-control" name="totalArea" id="field_totalArea"
+                           formControlName="totalArea"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_capacity">Capacity</label>
+                    <input type="number" class="form-control" name="capacity" id="field_capacity"
+                           formControlName="capacity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_maxCapacity">Max Capacity</label>
+                    <input type="number" class="form-control" name="maxCapacity" id="field_maxCapacity"
+                           formControlName="maxCapacity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_registrationSource">Registration Source</label>
+                    <input type="text" class="form-control" name="registrationSource" id="field_registrationSource"
+                           formControlName="registrationSource"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bookingPolicy">Booking Policy</label>
+                    <input type="number" class="form-control" name="bookingPolicy" id="field_bookingPolicy"
+                           formControlName="bookingPolicy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_reviewStatus">Review Status</label>
+                    <input type="number" class="form-control" name="reviewStatus" id="field_reviewStatus"
+                           formControlName="reviewStatus"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_status">Status</label>
+                    <input type="number" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_basePrice">Base Price</label>
+                    <input type="number" class="form-control" name="basePrice" id="field_basePrice"
+                           formControlName="basePrice"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_commission">Commission</label>
+                    <input type="number" class="form-control" name="commission" id="field_commission"
+                           formControlName="commission"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="field_placeAtts">Place Att</label>
+                    <select class="form-control" id="field_placeAtts" multiple name="placeAtts" formControlName="placeAtts">
+                        <option [ngValue]="getSelected(editForm.get('placeAtts').value, attributeOption)" *ngFor="let attributeOption of attributes; trackBy: trackAttributeById">{{attributeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_places">Place</label>
+                    <select class="form-control" id="field_places" multiple name="places" formControlName="places">
+                        <option [ngValue]="getSelected(editForm.get('places').value, placeTagOption)" *ngFor="let placeTagOption of placetags; trackBy: trackPlaceTagById">{{placeTagOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

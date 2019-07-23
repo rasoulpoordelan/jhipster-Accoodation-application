@@ -1,0 +1,57 @@
+<div>
+    <h2 id="page-heading">
+        <span>Place Areas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-place-area-my-suffix" [routerLink]="['/place-area-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Place Area
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="placeAreas?.length === 0">
+        <span>No placeAreas found</span>
+    </div>
+    <div class="table-responsive" *ngIf="placeAreas?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Name</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let placeArea of placeAreas ;trackBy: trackId">
+                <td><a [routerLink]="['/place-area-my-suffix', placeArea.id, 'view' ]">{{placeArea.id}}</a></td>
+                <td>{{placeArea.name}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/place-area-my-suffix', placeArea.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/place-area-my-suffix', placeArea.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'place-area-my-suffix', { outlets: { popup: placeArea.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
